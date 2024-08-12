@@ -1,0 +1,100 @@
+/*
+
+La majorité de ce code provient de la thèse de Joseph Cook.
+J'ai rajouté la normalisation.
+
+Cook, J. (2021, 26 août). Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups. arXiv. http://arxiv.org/abs/2108.11825
+
+*/
+
+
+int n = 50;
+
+real cx = 1.031969722;
+real r = 0.254875473;
+
+real s = 0.7770942488589633;
+
+real x06 = s * cos(5 * pi / 7);
+real y06 = s * sin(5 * pi / 7);
+real x03 = s * cos(2 * pi / 7);
+real y03 = s * sin(2 * pi / 7);
+real x05 = s * cos(4 * pi / 7);
+real y05 = s * sin(4 * pi / 7);
+real x10 = s * cos(9 * pi / 7);
+real y10 = s * sin(9 * pi / 7);
+real x07 = s * cos(6 * pi / 7);
+real y07 = s * sin(6 * pi / 7);
+real x12 = s * cos(11 * pi / 7);
+real y12 = s * sin(11 * pi / 7);
+real x09 = s * cos(8 * pi / 7);
+real y09 = s * sin(8 * pi / 7);
+real x14 = s * cos(13 * pi / 7);
+real y14 = s * sin(13 * pi / 7);
+real x11 = s * cos(10 * pi / 7);
+real y11 = s * sin(10 * pi / 7);
+real x02 = s * cos(pi / 7);
+real y02 = s * sin(pi / 7);
+real x13 = s * cos(12 * pi / 7);
+real y13 = s * sin(12 * pi / 7);
+real x04 = s * cos(3 * pi / 7);
+real y04 = s * sin(3 * pi / 7);
+
+border G1 (t = 9 * pi / 7,5 * pi / 7){ x = cx + r * cos(t); y = r * sin(t); label = 1;};
+border G2 (t = 9 * pi / 7,5 * pi / 7){ x = cos(pi / 7) * (cx + r * cos(t)) - sin(pi / 7) * (r * sin(t)); y = sin(pi / 7) * (cx + r * cos(t)) + cos(pi / 7) * (r * sin(t)); label = 2; };
+border G3 (t = 9 * pi / 7,5 * pi / 7){x = cos(2 * pi / 7) * (cx + r * cos(t)) - sin(2 * pi / 7) * r * sin(t); y = sin(2 * pi / 7) * (cx + r * cos(t)) + cos(2 * pi / 7) * r * sin(t); label = 3; };
+border G4 (t = 9 * pi / 7,5 * pi / 7){x = cos(3 * pi / 7) * (cx + r * cos(t)) - sin(3 * pi / 7) * r * sin(t); y = sin(3 * pi / 7) * (cx + r * cos(t)) + cos(3 * pi / 7) * r * sin(t); label = 4; };
+border G5 (t = 9 * pi / 7,5 * pi / 7){ x = cos(4 * pi / 7) * (cx + r * cos(t)) - sin(4 * pi / 7) * r * sin(t);
+y = sin(4 * pi / 7) * (cx + r * cos(t)) + cos(4 * pi / 7) * r * sin(t); label = 5; };
+border G6(t = 9 * pi / 7,5 * pi / 7){x = cos(5 * pi / 7) * (cx + r * cos(t)) - sin(5 * pi / 7) * r * sin(t);
+y = sin(5 * pi / 7) * (cx + r * cos(t)) + cos(5 * pi / 7) * r * sin(t); label = 6; };
+border G7(t = 9 * pi / 7,5 * pi / 7){x = cos(6 * pi / 7) * (cx + r * cos(t)) - sin(6 * pi / 7) * r * sin(t);
+y = sin(6 * pi / 7) * (cx + r * cos(t)) + cos(6 * pi / 7) * r * sin(t); label = 7; };
+border G8(t = 9 * pi / 7,5 * pi / 7){x = cos(7 * pi / 7) * (cx + r * cos(t)) - sin(7 * pi / 7) * r * sin(t);
+y = sin(7 * pi / 7) * (cx + r * cos(t)) + cos(7 * pi / 7) * r * sin(t); label = 8; };
+border G9(t = 9 * pi / 7,5 * pi / 7){x = cos(8 * pi / 7) * (cx + r * cos(t)) - sin(8 * pi / 7) * r * sin(t);
+y = sin(8 * pi / 7) * (cx + r * cos(t)) + cos(8 * pi / 7) * r * sin(t); label = 9; };
+border G10(t = 9 * pi / 7,5 * pi / 7){x = cos(9 * pi / 7) * (cx + r * cos(t)) - sin(9 * pi / 7) * r * sin(t);
+y = sin(9 * pi / 7) * (cx + r * cos(t)) + cos(9 * pi / 7) * r * sin(t); label = 10; };
+border G11(t = 9 * pi / 7,5 * pi / 7){x = cos(10 * pi / 7) * (cx + r * cos(t)) - sin(10 * pi / 7) * r * sin(t); y = sin(10 * pi / 7) * (cx + r * cos(t)) + cos(10 * pi / 7) * r * sin(t); label = 11; };
+border G12(t = 9 * pi / 7,5 * pi / 7){x = cos(11 * pi / 7) * (cx + r * cos(t)) - sin(11 * pi / 7) * r * sin(t); y = sin(11 * pi / 7) * (cx + r * cos(t)) + cos(11 * pi / 7) * r * sin(t); label = 12; };
+border G13(t = 9 * pi / 7,5 * pi / 7){x = cos(12 * pi / 7) * (cx + r * cos(t)) - sin(12 * pi / 7) * r * sin(t); y = sin(12 * pi / 7) * (cx + r * cos(t)) + cos(12 * pi / 7) * r * sin(t); label = 13; };
+border G14(t = 9 * pi / 7,5 * pi / 7){x = cos(13 * pi / 7) * (cx + r * cos(t)) - sin(13 * pi / 7) * r * sin(t); y = sin(13 * pi / 7) * (cx + r * cos(t)) + cos(13 * pi / 7) * r * sin(t); label = 14; };
+
+mesh Th = buildmesh(G1(n) + G2(n) + G3(n) + G4(n) + G5(n) + G6(n) + G7(n) + G8(n) + G9(n) + G10(n) + G11(n) + G12(n) + G13(n) + G14(n), fixeborder = true);
+
+fespace Vh(Th, P2, periodic = [[1, y], [6, (cos(2 * pi/7)) * (y - y06) - (sin( - 2 * pi/7)) * (x - x06)],
+                                [3, (cos(2 * pi/7)) * (y - y03) - (sin(2 * pi/7)) * (x - x03)], [8, y], 
+                                [5, (cos(4 * pi/7)) * (y - y05) - (sin(4 * pi/7)) * (x - x05)], 
+                                [10, (cos(2 * pi/7)) * (y - y10) - (sin(2 * pi/7)) * (x - x10)], 
+                                [7, (cos(6 * pi/7)) * (y - y07) - (sin(6 * pi/7)) * (x - x07)], 
+                                [12, (cos(4 * pi/7)) * (y - y12) - (sin(4 * pi/7)) * (x - x12)], 
+                                [9, (cos(6 * pi/7)) * (y - y09) - (sin( - 6 * pi/7)) * (x - x09)], 
+                                [14, (cos(6 * pi/7)) * (y - y14) - (sin(6 * pi/7)) * (x - x14)], 
+                                [11, (cos(4 * pi/7)) * (y - y11) - (sin( - 4 * pi/7)) * (x - x11)], 
+                                [2, (cos(6 * pi/7)) * (y - y02) - (sin( - 6 * pi/7)) * (x - x02)], 
+                                [13, (cos(2 * pi/7)) * (y - y13) - (sin( - 2 * pi/7)) * (x - x13)], 
+                                [4, (cos(4 * pi/7)) * (y - y04) - (sin( - 4 * pi/7)) * (x - x04)]]);
+
+Vh u1, u2;
+real sigma = 0.00001;
+
+varf op (u1, u2) = int2d(Th)(dx(u1) * dx(u2) + dy(u1) * dy(u2) - sigma * u1 * u2 * 4 / (1 - x^2 - y^2)^2);
+varf bm ([u1], [u2]) = int2d(Th)(u1 * u2 * 4 / (1 - x^2 - y^2)^2);
+
+matrix OP = op(Vh, Vh, solver = Crout, factorize = 1);
+matrix B = bm(Vh, Vh, solver = CG, eps = 1e-20);
+
+real[int] ev(30);
+Vh[int] eV(30);
+
+int k = EigenValue(OP, B, sym = true, sigma = sigma, value = ev, vector = eV, tol=1e-10, maxit = 0, ncv = 0);
+
+//real aire = int2d(Th)(4 / (1 - x^2 - y^2)^2);
+real vp1 = 0;
+int nbr = 0;
+
+for (int i = 0; i < k; i++)
+{
+    cout << "lambda[" << i << "] = " << ev[i] << " | normalisation : " << ev[i] * 8 * pi << endl;
+}

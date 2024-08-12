@@ -1,0 +1,125 @@
+// Taille de la base du triangle
+real taille = 0.5;
+
+real espacement = 1;
+
+real alpha = pi / 3;
+real beta = pi / 3;
+
+int n = 45;
+int nbrVP = 10;
+
+real t1 = 0;
+real pente = 0;
+
+if (beta > pi / 2)
+{
+    t1 = - taille * tan(pi - beta) / (tan(alpha) - tan(pi - beta));
+    pente = tan(pi - beta);
+    n *= -1;
+}
+
+else
+{
+    t1 = taille * tan(beta) / (tan(alpha) + tan(beta));
+    pente = - tan(beta);
+}
+
+border T1C1 (t = espacement * 0, espacement * 0 + taille) {x = t; y = 0; label = 1;};
+border T1C2 (t = espacement * 0, espacement * 0 + t1) {x = t; y = tan(alpha) * (t - 0 * espacement); label = 2;};
+border T1C3 (t = 0 * espacement + taille, 0 * espacement + t1) {x = t; y = pente * (t - espacement * 0 - taille); label = 3;};
+border T2C1 (t = espacement * 1, espacement * 1 + taille) {x = t; y = 0; label = 4;};
+border T2C2 (t = espacement * 1, espacement * 1 + t1) {x = t; y = tan(alpha) * (t - 1 * espacement); label = 5;};
+border T2C3 (t = 1 * espacement + taille, 1 * espacement + t1) {x = t; y = pente * (t - espacement * 1 - taille); label = 6;};
+border T3C1 (t = espacement * 2, espacement * 2 + taille) {x = t; y = 0; label = 7;};
+border T3C2 (t = espacement * 2, espacement * 2 + t1) {x = t; y = tan(alpha) * (t - 2 * espacement); label = 8;};
+border T3C3 (t = 2 * espacement + taille, 2 * espacement + t1) {x = t; y = pente * (t - espacement * 2 - taille); label = 9;};
+border T4C1 (t = espacement * 3, espacement * 3 + taille) {x = t; y = 0; label = 10;};
+border T4C2 (t = espacement * 3, espacement * 3 + t1) {x = t; y = tan(alpha) * (t - 3 * espacement); label = 11;};
+border T4C3 (t = 3 * espacement + taille, 3 * espacement + t1) {x = t; y = pente * (t - espacement * 3 - taille); label = 12;};
+border T5C1 (t = espacement * 4, espacement * 4 + taille) {x = t; y = 0; label = 13;};
+border T5C2 (t = espacement * 4, espacement * 4 + t1) {x = t; y = tan(alpha) * (t - 4 * espacement); label = 14;};
+border T5C3 (t = 4 * espacement + taille, 4 * espacement + t1) {x = t; y = pente * (t - espacement * 4 - taille); label = 15;};
+border T6C1 (t = espacement * 5, espacement * 5 + taille) {x = t; y = 0; label = 16;};
+border T6C2 (t = espacement * 5, espacement * 5 + t1) {x = t; y = tan(alpha) * (t - 5 * espacement); label = 17;};
+border T6C3 (t = 5 * espacement + taille, 5 * espacement + t1) {x = t; y = pente * (t - espacement * 5 - taille); label = 18;};
+border T7C1 (t = espacement * 6, espacement * 6 + taille) {x = t; y = 0; label = 19;};
+border T7C2 (t = espacement * 6, espacement * 6 + t1) {x = t; y = tan(alpha) * (t - 6 * espacement); label = 20;};
+border T7C3 (t = 6 * espacement + taille, 6 * espacement + t1) {x = t; y = pente * (t - espacement * 6 - taille); label = 21;};
+border T8C1 (t = espacement * 7, espacement * 7 + taille) {x = t; y = 0; label = 22;};
+border T8C2 (t = espacement * 7, espacement * 7 + t1) {x = t; y = tan(alpha) * (t - 7 * espacement); label = 23;};
+border T8C3 (t = 7 * espacement + taille, 7 * espacement + t1) {x = t; y = pente * (t - espacement * 7 - taille); label = 24;};
+border T9C1 (t = espacement * 8, espacement * 8 + taille) {x = t; y = 0; label = 25;};
+border T9C2 (t = espacement * 8, espacement * 8 + t1) {x = t; y = tan(alpha) * (t - 8 * espacement); label = 26;};
+border T9C3 (t = 8 * espacement + taille, 8 * espacement + t1) {x = t; y = pente * (t - espacement * 8 - taille); label = 27;};
+border T10C1 (t = espacement * 9, espacement * 9 + taille) {x = t; y = 0; label = 28;};
+border T10C2 (t = espacement * 9, espacement * 9 + t1) {x = t; y = tan(alpha) * (t - 9 * espacement); label = 29;};
+border T10C3 (t = 9 * espacement + taille, 9 * espacement + t1) {x = t; y = pente * (t - espacement * 9 - taille); label = 30;};
+border T11C1 (t = espacement * 10, espacement * 10 + taille) {x = t; y = 0; label = 31;};
+border T11C2 (t = espacement * 10, espacement * 10 + t1) {x = t; y = tan(alpha) * (t - 10 * espacement); label = 32;};
+border T11C3 (t = 10 * espacement + taille, 10 * espacement + t1) {x = t; y = pente * (t - espacement * 10 - taille); label = 33;};
+border T12C1 (t = espacement * 11, espacement * 11 + taille) {x = t; y = 0; label = 34;};
+border T12C2 (t = espacement * 11, espacement * 11 + t1) {x = t; y = tan(alpha) * (t - 11 * espacement); label = 35;};
+border T12C3 (t = 11 * espacement + taille, 11 * espacement + t1) {x = t; y = pente * (t - espacement * 11 - taille); label = 36;};
+border T13C1 (t = espacement * 12, espacement * 12 + taille) {x = t; y = 0; label = 37;};
+border T13C2 (t = espacement * 12, espacement * 12 + t1) {x = t; y = tan(alpha) * (t - 12 * espacement); label = 38;};
+border T13C3 (t = 12 * espacement + taille, 12 * espacement + t1) {x = t; y = pente * (t - espacement * 12 - taille); label = 39;};
+border T14C1 (t = espacement * 13, espacement * 13 + taille) {x = t; y = 0; label = 40;};
+border T14C2 (t = espacement * 13, espacement * 13 + t1) {x = t; y = tan(alpha) * (t - 13 * espacement); label = 41;};
+border T14C3 (t = 13 * espacement + taille, 13 * espacement + t1) {x = t; y = pente * (t - espacement * 13 - taille); label = 42;};
+
+plot(T1C1(n) + T1C2(-n) + T1C3(n));
+
+mesh Th = buildmesh(T1C1(n) + T1C2(-n) + T1C3(n) + T2C1(n) + T2C2(-n) + T2C3(n) + T3C1(n) + T3C2(-n) + T3C3(n) + T4C1(n) + T4C2(-n) + T4C3(n) + T5C1(n) + T5C2(-n) + T5C3(n) + T6C1(n) + T6C2(-n) + T6C3(n) + T7C1(n) + T7C2(-n) + T7C3(n) + T8C1(n) + T8C2(-n) + T8C3(n) + T9C1(n) + T9C2(-n) + T9C3(n) + T10C1(n) + T10C2(-n) + T10C3(n) + T11C1(n) + T11C2(-n) + T11C3(n) + T12C1(n) + T12C2(-n) + T12C3(n) + T13C1(n) + T13C2(-n) + T13C3(n) + T14C1(n) + T14C2(-n) + T14C3(n));
+fespace Vh (Th, P2, periodic = [[1, x + espacement], [4, x],
+[5, y], [8, y],
+[6, y], [21, y],
+[7, x + espacement], [10, x],
+[11, y], [14, y],
+[12, y], [27, y],
+[13, x + espacement], [16, x],
+[17, y], [20, y],
+[18, y], [33, y],
+[19, x + espacement], [22, x],
+[23, y], [26, y],
+[24, y], [39, y],
+[25, x + espacement], [28, x],
+[29, y], [32, y],
+[30, y], [3, y],
+[31, x + espacement], [34, x],
+[35, y], [38, y],
+[36, y], [9, y],
+[37, x + espacement], [40, x],
+[41, y], [2, y],
+[42, y], [15, y]]);
+
+Vh u1, u2;
+real sigma = 0.00001;
+
+varf op (u1, u2) = int2d(Th)(dx(u1) * dx(u2) + dy(u1) * dy(u2) - sigma * u1 * u2 * 1);
+varf bm ([u1], [u2]) = int2d(Th)(u1 * u2 * 1);
+
+matrix OP = op(Vh, Vh, solver = Crout, factorize = 1);
+matrix B = bm(Vh, Vh, solver = CG, eps = 1e-20);
+
+real[int] ev(nbrVP);
+Vh[int] eV(nbrVP);
+
+int k = EigenValue(OP, B, sym = true, sigma = sigma, value = ev, vector = eV, tol=1e-10, maxit = 0, ncv = 0);
+real val = 0;
+real aire = int2d(Th)(1);
+int nbr = 0;
+int pos = 0;
+
+for (int i = 0; i < k; i++)
+{
+    if (abs(ev[i]) > 0.01)
+    {
+        val = ev[i] * aire;
+        nbr = i;
+        break;
+    }
+}
+
+cout << "Retour : " << val << "|" << endl;
+cout << "Aire : " << aire << endl;
